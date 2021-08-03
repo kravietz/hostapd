@@ -1,0 +1,20 @@
+---
+- name: ensure hostapd installed
+  package:
+    name: hostapd
+
+- name: hostapd configuration
+  template:
+    dest: "/etc/hostapd/{{ hostapd_interface }}.conf"
+    src: templates/hostapd.conf.j2
+    owner: root
+    group: root
+    mode: 0640
+  notify:
+    - restart hostapd
+
+- name: hostapd service started
+  service:
+    name: "hostapd@{{ hostapd_interface }}"
+    state: started
+    enabled: true

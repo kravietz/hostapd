@@ -1,0 +1,5 @@
+# {{ ansible_managed }}
+# Reference: http://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf
+{% for key,value in hostapd_config.items() %}
+{{ key }}={{ value }}
+{% endfor %}

@@ -1,0 +1,25 @@
+---
+# Interface to run hostapd on
+# systemd hostapd@wlan1.service will be started based on this entry
+# hostapd_interface: wlan1
+
+# This will be converted 1-to-1 into the hostapd configuration file
+# Reference http://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf
+# hostapd_config:
+#     country_code: GB
+#     bridge: br0
+#     interface: "{{ hostapd_interface }}"
+#     driver: nl80211
+#     ssid: "MyWLAN"
+#     hw_mode: g
+#     channel: 9
+#     wmm_enabled: 0
+#     macaddr_acl: 0
+#     auth_algs: 1
+#     wpa: 2
+#     wpa_passphrase: "OhGae6hay0rooRi0poo7"
+#     wpa_key_mgmt: WPA-PSK WPA-PSK-SHA256
+#     wpa_pairwise: TKIP CCMP
+#     rsn_pairwise: CCMP
+#     ctrl_interface: /var/run/hostapd
+
