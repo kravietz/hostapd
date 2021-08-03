@@ -1,0 +1,5 @@
+---
+- name: restart hostapd
+  service:
+    name: "hostapd@{{ hostapd_interface }}"
+    state: restarted
