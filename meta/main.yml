@@ -1,6 +1,6 @@
 galaxy_info:
   author: kravietz
-  role_name: hostpad
+  role_name: hostapd
   description: Role to set up and configure `hostapd` using `systemd.service` that supports all configuration options.
   company: krvtz.net
   issue_tracker_url: https://github.com/kravietz/hostapd/issues
