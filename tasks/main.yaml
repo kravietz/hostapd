@@ -2,6 +2,7 @@
 - name: ensure hostapd installed
   package:
     name: hostapd
+    update_cache: true
 
 - name: hostapd configuration
   template:
