@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: kravietz.hostapd
+      hostapd_interface: wlan1
+      hostapd_config:
+          country_code: GB
+          interface: "{{ hostapd_interface }}"
+          driver: nl80211
+          ssid: "TEST"
+          hw_mode: g
+          channel: 10
+          auth_algs: 1
+          wpa: 3
+          wpa_passphrase: "TEST-TEST-TEST"
+          wpa_key_mgmt: WPA-PSK WPA-PSK-SHA256

@@ -18,3 +18,5 @@
     name: "hostapd@{{ hostapd_interface }}"
     state: started
     enabled: true
+  # requires fully operational systemd in Docker
+  tags: molecule-notest

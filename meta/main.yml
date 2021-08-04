@@ -1,5 +1,6 @@
 galaxy_info:
-  author: Paweł Krawczyk
+  author: kravietz
+  role_name: hostpad
   description: Role to set up and configure `hostapd` using `systemd.service` that supports all configuration options.
   company: krvtz.net
   issue_tracker_url: https://github.com/kravietz/hostapd/issues
@@ -21,10 +22,12 @@ galaxy_info:
         - any
     - name: EL
       version:
-        - 7
+        - '7'
+        - '8'
     - name: Fedora
       version:
-        - 25
+        - '32'
+        - '34'
 
   galaxy_tags:
     - hostapd
@@ -32,5 +35,4 @@ galaxy_info:
     - wpa_supplicant
     - linux
 
-dependencies:
-  - role: shibumi.systemd-conf
+dependencies: []

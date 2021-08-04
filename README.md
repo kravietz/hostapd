@@ -85,7 +85,7 @@ Assuming the above configuration in `host_vars`:
 License
 -------
 
-BSD
+GPLv3
 
 Author Information
 ------------------

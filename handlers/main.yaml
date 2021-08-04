@@ -3,3 +3,5 @@
   service:
     name: "hostapd@{{ hostapd_interface }}"
     state: restarted
+  # requires fully operational systemd in Docker
+  tags: molecule-notest
