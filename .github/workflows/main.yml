@@ -17,8 +17,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: ansible syntax check
-        run: ansible-playbook tests/test.yml --syntax-check
-
       - name: Ansible Molecule
         uses: MonolithProjects/action-molecule@v1.4.3
