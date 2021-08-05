@@ -4,9 +4,27 @@
     name: hostapd
     update_cache: true
 
+- name: set RedHat vars
+  set_fact:
+    config_file: hostapd.conf
+    service_name: hostapd.service
+  when: ansible_facts['os_family'] == "RedHat
+
+- name: set Debian vars
+  set_fact:
+    # per-interface systemd service supported
+    config_file: "{{ hostapd_interface }}.conf"
+    service_name: "hostapd@{{ hostapd_interface }}.service"
+  when: ansible_facts['os_family'] == "Debian
+
+- name: disable handler for Docker testing
+  set_fact:
+    handler_enabled: true
+  tags: molecule-notest
+
 - name: hostapd configuration
   template:
-    dest: "/etc/hostapd/{{ hostapd_interface }}.conf"
+    dest: "/etc/hostapd/{{ config_file }}"
     src: templates/hostapd.conf.j2
     owner: root
     group: root
@@ -16,7 +34,7 @@
 
 - name: hostapd service started
   service:
-    name: "hostapd@{{ hostapd_interface }}"
+    name: "{{ service_name }}"
     state: started
     enabled: true
   # requires fully operational systemd in Docker

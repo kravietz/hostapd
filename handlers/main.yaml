@@ -1,7 +1,6 @@
 ---
 - name: restart hostapd
   service:
-    name: "hostapd@{{ hostapd_interface }}"
+    name: "{{ service_name }}"
     state: restarted
-  # requires fully operational systemd in Docker
-  tags: molecule-notest
+  when: "handler_enabled | default('false')"
