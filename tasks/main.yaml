@@ -10,12 +10,12 @@
     service_name: hostapd.service
   when: ansible_facts['os_family'] == "RedHat"
 
-- name: set Debian vars
+- name: set Debian and Arch vars
   set_fact:
     # per-interface systemd service supported
     config_file: "{{ hostapd_interface }}.conf"
     service_name: "hostapd@{{ hostapd_interface }}.service"
-  when: ansible_facts['os_family'] == "Debian"
+  when: ansible_facts['os_family'] == "Debian" or ansible_facts['os_family'] == "Arch"
 
 - name: disable handler for Docker testing
   set_fact:
