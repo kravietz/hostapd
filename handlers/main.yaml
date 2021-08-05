@@ -3,4 +3,4 @@
   service:
     name: "{{ service_name }}"
     state: restarted
-  when: handler_enabled | default('false')
+  when: handler_enabled | default('false') == true
