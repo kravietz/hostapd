@@ -22,4 +22,3 @@
 #     wpa_pairwise: TKIP CCMP
 #     rsn_pairwise: CCMP
 #     ctrl_interface: /var/run/hostapd
-
