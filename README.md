@@ -17,9 +17,7 @@ Interface to run `hostapd` on. This will be used to start `hostapd@wlan1.service
 ```
 hostapd_interface: wlan1
 ```
-This will be converted 1-to-1 into the hostapd configuration file. Please see
-[hostapd.conf reference](http://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf)
-for details.
+The following `hostapd_config` dictionary will be converted one-to-one into the hostapd configuration file. Please see [hostapd.conf reference](http://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf) for details on individual options:
 
 ```
 hostapd_config:
@@ -34,7 +32,7 @@ hostapd_config:
     macaddr_acl: 0
     auth_algs: 1
     wpa: 2
-    wpa_passphrase: "OhGae6hay0rooRi0poo7"
+    wpa_passphrase: "OhGae6hay0rooRi0poo7"  # protect with ansible-vault
     wpa_key_mgmt: WPA-PSK WPA-PSK-SHA256
     wpa_pairwise: TKIP CCMP
     rsn_pairwise: CCMP
